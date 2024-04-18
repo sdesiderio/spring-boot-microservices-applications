@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetes-example
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubernetes-example
+  template:
+    metadata:
+      labels:
+        app: kubernetes-example
+    spec:
+      containers:
+        - name: kubernetes-example
+          image: kubernetes-example
+          ports:
+            - containerPort: 8080
